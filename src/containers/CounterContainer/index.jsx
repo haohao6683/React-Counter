@@ -1,5 +1,6 @@
 import Counter from '../../components/Counter';
 import { connect } from 'react-redux';
+import {increase,decrease} from '../../action'
 
 //i dont know this
 const mapStateToProps = function (state) {
@@ -17,4 +18,4 @@ const mapDispatchToProps = function (dispatch) {
 //bind the Counter component.
 const CounterPackage = connect(mapStateToProps, mapDispatchToProps)(Counter);
 
-export default counter;
+export default Counter;
