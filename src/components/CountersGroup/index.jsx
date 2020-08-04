@@ -1,5 +1,6 @@
 import React from 'react';
 import Counter from '../Counter';
+import store from '../../store/store';
 
 class CountersGroup extends React.Component{
     constructor(props){
