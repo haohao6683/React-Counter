@@ -1,13 +1,11 @@
-export const increase = (counters) => {
+export const addTotal = () => {
     return {
         type: 'INCREASE',
-        counters: counters
     }
 }
 
-export const decrease = (counters) => {
+export const minusTotal = () => {
     return {
         type: 'DECREASE',
-        counters: counters
     }
 }

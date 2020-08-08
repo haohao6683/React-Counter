@@ -6,23 +6,20 @@ class Counter extends React.Component{
         this.state = {
             number : 0
         };
-
-        this.increase = this.increase.bind(this);
-        this.decrease = this.decrease.bind(this);
     }
 
-    increase() {
+    increase = () =>{
         this.setState({
             number: this.state.number + 1
         });
-        this.props.getNumber(1)
+        this.props.increase();
       }
 
-    decrease() {
+    decrease = () =>{
         this.setState({
             number: this.state.number - 1
         });
-        this.props.getNumber(-1)
+        this.props.decrease();
     }
 
     render(){

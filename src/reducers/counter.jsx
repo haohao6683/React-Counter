@@ -1,12 +1,13 @@
-const counter = (state = {}, action = {}) => {
-    //return diff state by diff String.
+const countersGroup = (state = {total: 0}, action = {}) => {
     switch(action.type){
         case 'INCREASE' : 
-            return Object.assign({}, state, {count: state.count + 1});
+            state.total += 1;
+            return state;
         case 'DECREASE' :
-            return Object.assign({}, state, {count: state.count - 1});
+            state.total -= 1;
+            return state;
+        default : return state;
     }
-    return state;
 }
 
-export default counter;
+export default countersGroup;

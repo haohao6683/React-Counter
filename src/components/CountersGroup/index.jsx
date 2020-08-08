@@ -1,6 +1,5 @@
 import React from 'react';
 import Counter from '../Counter';
-import store from '../../store/store';
 
 class CountersGroup extends React.Component{
     constructor(props){
@@ -25,12 +24,20 @@ class CountersGroup extends React.Component{
         });
       }
 
+    increase = () =>{
+        this.props.addTotal()
+    }
+
+    decrease= () =>{
+        this.props.minusTotal()
+    }
+
     render(){
         return(
             <div>
                 number of counters: <input id="numbers" type="text" onChange={(e)=>this.changeEvent(e)} />
                 <br/>total: {this.state.total}
-                {new Array(this.state.number).fill(0).map((value, index) => <Counter key={index}  getNumber={this.handleChanges}/>)} 
+                {new Array(this.state.number).fill(0).map((value, index) => <Counter key={index} increase = {this.increase} decrease = {this.decrease}/>)} 
             </div>
         );
     }
